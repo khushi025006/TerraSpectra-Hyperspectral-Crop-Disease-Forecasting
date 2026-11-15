@@ -1,0 +1,133 @@
+{
+    "project": "TerraSpectra",
+    "audit_timestamp": "2026-11-16T01:25:12.261009",
+    "dataset": {
+        "rows": 1000,
+        "columns": 9,
+        "memory_usage_bytes": 307082
+    },
+    "schema_validation": {
+        "valid": true,
+        "missing_columns": [],
+        "extra_columns": [],
+        "total_columns": 9
+    },
+    "missing_values": {
+        "image_id": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        "trial": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        "plant": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        "leaf": {
+            "missing_count": 16,
+            "missing_percentage": 1.6
+        },
+        "part": {
+            "missing_count": 98,
+            "missing_percentage": 9.8
+        },
+        "date": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        "imaging_distance": {
+            "missing_count": 2,
+            "missing_percentage": 0.2
+        },
+        "integration_time": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        },
+        "weather": {
+            "missing_count": 0,
+            "missing_percentage": 0.0
+        }
+    },
+    "duplicates": {
+        "duplicate_rows": 0,
+        "duplicate_image_ids": 0
+    },
+    "date_analysis": {
+        "valid_dates": 1000,
+        "invalid_dates": 0,
+        "start_date": "2025-04-11",
+        "end_date": "2025-08-25",
+        "unique_dates": 46
+    },
+    "plant_analysis": {
+        "unique_plants": 13,
+        "plant_record_counts": {
+            "028/II": 106,
+            "028/I": 104,
+            "028/III": 98,
+            "028/IV": 98,
+            "065/IV": 96,
+            "065/III": 94,
+            "065/I": 90,
+            "065/II": 89,
+            "K/I": 66,
+            "K/II": 65,
+            "028/V": 39,
+            "065/V": 31,
+            "K/III": 24
+        }
+    },
+    "trial_analysis": {
+        "unique_trials": 5,
+        "trial_record_counts": {
+            "1": 202,
+            "2": 204,
+            "3": 193,
+            "4": 247,
+            "5": 154
+        }
+    },
+    "imaging_conditions": {
+        "imaging_distance": {
+            "mean": 23.96,
+            "median": 22.0,
+            "minimum": 11.0,
+            "maximum": 100.0,
+            "missing": 2
+        },
+        "integration_time": {
+            "mean": 40.07,
+            "median": 35.0,
+            "minimum": 4.0,
+            "maximum": 220.0,
+            "missing": 0
+        }
+    },
+    "weather_analysis": {
+        "unique_weather_conditions": 14,
+        "weather_record_counts": {
+            "Cloudy 100%": 330,
+            "Sunny 100%": 273,
+            "Partly cloudy (50%)": 134,
+            "Partly cloudy (90%)": 63,
+            "Partly cloudy (80%)": 45,
+            "Partly cloudy (20%)": 35,
+            "Partly cloudy (75%)": 32,
+            "Partly cloudy (20-30%)": 23,
+            "Partly cloudy (99%)": 21,
+            "Partly cloudy (40%)": 16,
+            "Partly cloudy (80-90%)": 8,
+            "Partly cloudy (<30%)": 8,
+            "Partly cloudy (70%)": 6,
+            "Partly cloudy (90-95%)": 6
+        }
+    },
+    "temporal_tracking": {
+        "plants_with_multiple_observation_dates": 13,
+        "plants_with_single_observation_date": 0,
+        "total_plant_groups": 13,
+        "tracking_available": true
+    }
+}

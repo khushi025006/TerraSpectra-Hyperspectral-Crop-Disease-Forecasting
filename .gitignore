@@ -1,4 +1,4 @@
-# Python environment
+﻿# Python environment
 .venv/
 venv/
 env/
@@ -25,3 +25,20 @@ Thumbs.db
 # Temporary files
 *.tmp
 *.log
+
+# Raw hyperspectral dataset files
+data/raw/*.npz
+data/raw/*.zip
+data/raw/*.download*
+data/raw/*.part
+
+# Processed hyperspectral data
+data/processed/*.npz
+
+# Model artifacts
+models/*.pkl
+models/*.joblib
+models/*.h5
+models/*.keras
+models/*.pt
+models/*.pth
