@@ -1,0 +1,4 @@
+image_id,height,width,leaf_pixels,background_pixels,leaf_area_percent,border_pixels,border_percent,connected_components,bbox_x_min,bbox_y_min,bbox_x_max,bbox_y_max
+1797,512,512,105627,156517,40.29,1859,1.76,1,36,3,508,442
+1827,512,512,99987,162157,38.14,378,0.38,1,3,3,461,465
+1855,512,512,99750,162394,38.05,877,0.88,1,106,3,508,478
