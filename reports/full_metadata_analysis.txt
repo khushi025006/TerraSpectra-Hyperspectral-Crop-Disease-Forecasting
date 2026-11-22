@@ -1,0 +1,44 @@
+TERRASPECTRA - FULL METADATA ANALYSIS
+============================================================
+
+Total records: 1000
+Total columns: 11
+Unique dates: 46
+First date: 2025-04-11 00:00:00
+Last date: 2025-08-25 00:00:00
+
+PLANT GROUP COUNTS
+plant_group
+028    445
+065    400
+K      155
+
+TRIAL COUNTS
+trial
+1    202
+2    204
+3    193
+4    247
+5    154
+
+REPEATED OBJECT ANALYSIS
+
+Unique objects: 267
+Repeated objects: 215
+Objects on multiple dates: 215
+
+MISSING VALUES
+image_id             0
+trial                0
+plant                0
+leaf                16
+part                98
+date                 0
+imaging_distance     2
+integration_time     0
+weather              0
+plant_group          0
+object_id            0
+
+POSSIBLE LABEL COLUMNS
+[]

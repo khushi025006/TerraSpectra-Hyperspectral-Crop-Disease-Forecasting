@@ -42,3 +42,6 @@ models/*.h5
 models/*.keras
 models/*.pt
 models/*.pth
+
+# Original RGB dataset (1000 images)
+data/raw/rgb/
