@@ -1,0 +1,4 @@
+weather_category,observations,mean_brightness,median_brightness,std_brightness
+Cloudy,27,61.365,57.838,12.745
+Partly Cloudy,33,66.587,64.766,9.346
+Sunny,11,56.531,56.722,4.083

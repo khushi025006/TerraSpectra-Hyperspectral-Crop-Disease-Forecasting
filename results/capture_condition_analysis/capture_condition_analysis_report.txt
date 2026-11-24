@@ -1,0 +1,254 @@
+# TerraSpectra
+# Capture Condition Analysis Report
+
+## 1. Introduction
+
+This analysis investigates how image acquisition conditions may influence RGB image features in the TerraSpectra tomato hyperspectral dataset.
+
+The main acquisition parameters examined were:
+
+- Imaging distance
+- Integration time
+- Weather conditions
+
+The image features examined were:
+
+- Red channel mean
+- Green channel mean
+- Blue channel mean
+- Overall image brightness
+
+The purpose was to identify potential acquisition-related variations that should be considered when interpreting temporal image features.
+
+## 2. Dataset Overview
+
+The analysis used the Trial 4 plant-level temporal dataset.
+
+| Description | Value |
+|---|---:|
+| Original image records | 247 |
+| Plant-date observations | 71 |
+| Unique plants | 11 |
+| Group 028 observations | 28 |
+| Group 065 observations | 28 |
+| Control group K observations | 15 |
+| Image features examined | 4 |
+| Acquisition parameters | 2 |
+
+The three groups represent two inoculated plant groups and one control group.
+
+## 3. Methodology
+
+### 3.1 Data preparation
+
+The plant-level temporal dataset was loaded from:
+
+results/plant_level_temporal/plant_daily_summary.csv
+
+The dataset contained image features and acquisition metadata.
+
+### 3.2 Statistical analysis
+
+Spearman rank correlation was used to examine monotonic associations between acquisition parameters and image features.
+
+The analysis was performed for:
+
+- All observations combined.
+- Group 028.
+- Group 065.
+- Control group K.
+
+The following parameters were examined:
+
+- Imaging distance versus RGB means and brightness.
+- Integration time versus RGB means and brightness.
+
+A nominal p-value threshold of 0.05 was used for initial exploratory interpretation.
+
+### 3.3 Weather analysis
+
+Weather descriptions were normalized into three categories:
+
+- Sunny
+- Cloudy
+- Partly Cloudy
+
+Mean and median brightness were calculated for each category.
+
+### 3.4 Visualization
+
+Nine graphs were generated:
+
+- Four acquisition parameter versus image brightness/RGB relationships for imaging distance and integration time.
+- One weather versus brightness graph.
+
+Specifically, the outputs include eight scatter plots and one weather comparison graph.
+
+## 4. Overall Correlation Results
+
+### 4.1 Integration time
+
+| Image Feature | Spearman Correlation | P-value |
+|---|---:|---:|
+| Red mean | -0.534 | 0.000002 |
+| Green mean | -0.388 | 0.000841 |
+| Blue mean | -0.320 | 0.006475 |
+| Overall brightness | -0.443 | 0.000109 |
+
+All four features showed negative pooled associations with integration time.
+
+The strongest observed association was between integration time and red-channel mean intensity.
+
+### 4.2 Imaging distance
+
+| Image Feature | Spearman Correlation | P-value |
+|---|---:|---:|
+| Red mean | +0.118 | 0.325305 |
+| Green mean | +0.194 | 0.104758 |
+| Blue mean | +0.359 | 0.002085 |
+| Overall brightness | +0.169 | 0.159831 |
+
+Blue-channel intensity showed the strongest positive pooled association with imaging distance.
+
+The other three features showed weak positive associations.
+
+## 5. Group-wise Correlation Analysis
+
+### 5.1 Group 028
+
+| Parameter | Feature | Spearman Correlation | P-value |
+|---|---|---:|---:|
+| Imaging distance | Red | -0.213 | 0.27583 |
+| Imaging distance | Green | -0.238 | 0.22361 |
+| Imaging distance | Blue | +0.128 | 0.51600 |
+| Imaging distance | Brightness | -0.242 | 0.21479 |
+| Integration time | Red | -0.194 | 0.32296 |
+| Integration time | Green | -0.238 | 0.22348 |
+| Integration time | Blue | +0.275 | 0.15729 |
+| Integration time | Brightness | -0.210 | 0.28346 |
+
+No group-wise relationship reached the nominal 0.05 significance threshold.
+
+### 5.2 Group 065
+
+| Parameter | Feature | Spearman Correlation | P-value |
+|---|---|---:|---:|
+| Imaging distance | Red | -0.241 | 0.21644 |
+| Imaging distance | Green | -0.129 | 0.51399 |
+| Imaging distance | Blue | +0.064 | 0.74549 |
+| Imaging distance | Brightness | -0.198 | 0.31286 |
+| Integration time | Red | -0.382 | 0.04502 |
+| Integration time | Green | -0.096 | 0.62683 |
+| Integration time | Blue | -0.043 | 0.82875 |
+| Integration time | Brightness | -0.241 | 0.21624 |
+
+Integration time and red-channel intensity showed a nominally significant negative association.
+
+### 5.3 Control group K
+
+| Parameter | Feature | Spearman Correlation | P-value |
+|---|---|---:|---:|
+| Imaging distance | Red | -0.176 | 0.53137 |
+| Imaging distance | Green | -0.092 | 0.74350 |
+| Imaging distance | Blue | -0.288 | 0.29825 |
+| Imaging distance | Brightness | -0.074 | 0.79266 |
+| Integration time | Red | -0.504 | 0.05563 |
+| Integration time | Green | -0.475 | 0.07369 |
+| Integration time | Blue | -0.545 | 0.03565 |
+| Integration time | Brightness | -0.477 | 0.07245 |
+
+Integration time and blue-channel intensity showed a nominally significant negative association.
+
+## 6. Multiple-Testing Consideration
+
+A total of 24 group-wise correlation tests were conducted.
+
+Using a Bonferroni correction:
+
+0.05 / 24 = 0.002083
+
+Neither of the two nominally significant group-wise findings met this stricter threshold.
+
+Therefore, they should be treated as exploratory observations rather than confirmed statistical findings.
+
+## 7. Weather and Brightness Analysis
+
+| Weather Condition | Observations | Mean Brightness | Median Brightness |
+|---|---:|---:|---:|
+| Cloudy | 27 | 61.365 | 57.838 |
+| Partly Cloudy | 33 | 66.587 | 64.766 |
+| Sunny | 11 | 56.531 | 56.722 |
+
+Partly cloudy conditions had the highest average brightness, while sunny conditions had the lowest.
+
+The difference between partly cloudy and sunny mean brightness was approximately 10.06 units.
+
+These results describe differences in observed brightness across weather categories. They do not establish that weather caused the differences.
+
+## 8. Key Findings
+
+1. Integration time showed negative pooled associations with all four RGB-related image features.
+
+2. Red-channel intensity showed the strongest pooled association with integration time.
+
+3. Imaging distance showed its strongest pooled association with blue-channel intensity.
+
+4. Weather categories showed different average image brightness values.
+
+5. Group-wise relationships differed in strength and direction.
+
+6. Acquisition conditions should be considered when interpreting temporal RGB changes.
+
+## 9. Limitations
+
+1. The dataset contains 71 plant-date observations but only 11 unique plants.
+
+2. Repeated observations from the same plant are not independent biological replicates.
+
+3. The current Spearman correlation analysis does not account for repeated measurements within plants.
+
+4. Group-wise sample sizes are relatively small: 28 observations for groups 028 and 065, and 15 for K.
+
+5. Weather categories have unequal sample sizes.
+
+6. Acquisition parameters and weather conditions may vary together.
+
+7. The control group has different observation dates from the inoculated groups, limiting direct same-day comparisons.
+
+8. RGB colour and brightness measurements may also be affected by lighting, background, image framing and other capture conditions.
+
+9. No validated disease-severity labels were used in this analysis.
+
+10. These results cannot establish causal relationships or disease severity.
+
+## 10. Recommendations
+
+1. Preserve imaging distance, integration time and weather metadata during future analysis.
+
+2. Investigate acquisition-condition normalization before comparing temporal RGB features.
+
+3. Consider mixed-effects statistical models to account for repeated measurements within plants.
+
+4. Use plant identity as a grouping factor in future statistical analyses.
+
+5. Collect additional observations from independent plants.
+
+6. Where possible, standardize imaging distance and camera acquisition settings.
+
+7. Record consistent weather and lighting information.
+
+8. Validate any proposed image correction method before applying it to biological interpretation.
+
+## 11. Conclusion
+
+The capture-condition analysis identified several associations between image acquisition parameters and RGB image features in the TerraSpectra dataset.
+
+Integration time showed negative pooled associations with red, green, blue and overall brightness measurements. Imaging distance showed a positive association with blue-channel intensity. Mean brightness also differed across weather categories.
+
+The group-wise analysis demonstrated that these relationships were not consistent across all plant groups.
+
+These findings indicate that acquisition conditions are important considerations when interpreting temporal RGB measurements.
+
+However, because the dataset contains repeated observations from a small number of plants, the results should be considered exploratory. Further analysis using methods that account for repeated measurements and additional independent plant samples is recommended.
+
+The analysis does not establish disease severity or validated disease forecasting performance.
