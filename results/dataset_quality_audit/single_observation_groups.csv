@@ -1,0 +1,4 @@
+trial,plant,leaf,part,plant_group,image_count,unique_dates,repeated_capture_count,repeated_capture_dates,first_date,last_date,group_type
+4,K/III,A8,7,K,1,1,0,,2025-07-08,2025-07-08,single_observation
+4,K/III,A8,"7,G",K,1,1,0,,2025-07-09,2025-07-09,single_observation
+4,K/III,A8,G,K,1,1,0,,2025-07-08,2025-07-08,single_observation

@@ -1,0 +1,19 @@
+TERRASPECTRA DATASET QUALITY AUDIT
+=============================================
+
+total_metadata_records: 247
+unique_image_ids: 247
+duplicate_image_ids: 0
+missing_values: 0
+unique_plants: 11
+total_metadata_groups: 49
+repeated_observation_groups: 46
+single_observation_groups: 3
+unique_dates: 12
+repeated_capture_sequences: 2
+total_repeated_captures: 2
+source_sequence_records: 46
+sequence_count_mismatches: 0
+sequence_date_mismatches: 0
+start_date: 2025-07-04
+end_date: 2025-07-24
