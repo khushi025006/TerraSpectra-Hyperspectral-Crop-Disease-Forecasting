@@ -1,0 +1,32 @@
+{
+    "dataset": {
+        "name": "Trial 4 Dataset",
+        "total_images": 247,
+        "monitored_plants": 11,
+        "plant_groups": 3,
+        "plant_day_records": 71,
+        "leaf_part_records": 245
+    },
+    "plant_group_distribution": [
+        {
+            "group": "Group 028",
+            "images": 112
+        },
+        {
+            "group": "Group 065",
+            "images": 95
+        },
+        {
+            "group": "Control K",
+            "images": 40
+        }
+    ],
+    "validation": {
+        "total_sequences": 46,
+        "image_count_matches": 46,
+        "date_count_matches": 46,
+        "image_count_mismatches": 0,
+        "date_count_mismatches": 0,
+        "repeated_captures": 2
+    }
+}
